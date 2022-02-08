@@ -1,12 +1,17 @@
-import { PostList } from './components/PostList/PostList';
 import './App.css';
-import { UserList } from './components/UserList/UserList';
-import { UserDetail } from './components/UserDetail/UserDetail';
+import { Link } from "react-router-dom";
+import { PostList } from './components/Posts/PostList/PostList';
+import { UserList } from './components/Users/UserList/UserList';
+import { UserDetail } from './components/Users/UserDetail/UserDetail';
 
 function App() {
   return (
     <div className="App">
-      <UserDetail />
+      {/* <UserDetail userId='1' /> */}
+      {/* <UserList /> */}
+      <Link to='/posts'>Posts</Link> |{" "}
+      <Link to='/users'>Users</Link>
+      <PostList />
     </div>
   );
 }

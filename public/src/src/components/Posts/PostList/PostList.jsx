@@ -4,7 +4,7 @@ import { PostInfo } from './PostInfo';
 
 
 export function PostList(){
-    const [postList, setPostList] = useState([]);
+    const [postList, setPostList] = useState();
     useEffect(
         () => {
             fetch(`http://localhost:3001/posts`)
@@ -13,13 +13,23 @@ export function PostList(){
         },
         []
     );
-
-    return <ol>
-        {postList.map((post, index) => (
+    let postListContent;
+    if (postList){
+        postListContent = <>
+          {postList.map((post, index) => (
             <li key={index}>
                 <Post post={post} />
                 <PostInfo postInfo={post}/>
             </li>
         ))}
+        </>
+    } else {
+        postListContent = <>
+        <h2>Loading content...</h2>
+        </>
+    }
+
+    return <ol>
+      {postListContent}
     </ol>
 }

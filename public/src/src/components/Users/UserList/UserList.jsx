@@ -13,12 +13,21 @@ export function UserList(){
         },
         []
     );
+    let userListContent;
 
-    return <div className="users">
-        {userList.map((user, index) => (
+    if (userList){
+        userListContent = <>
+          {userList.map((user, index) => (
             <li key={index}>
                 <User user={user} />
             </li>
         ))}
+        </>
+    } else {
+        userListContent = <>
+        <h2>Loading page...</h2></>
+    }
+    return <div className="users">
+        {userListContent}
     </div>
 }
