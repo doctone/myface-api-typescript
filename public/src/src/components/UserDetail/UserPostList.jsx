@@ -1,4 +1,5 @@
 import React from "react";
+import { Post } from '../Post/Post'
 
 export function UserPostList({ user }){
     // console.log(user);
@@ -6,8 +7,7 @@ export function UserPostList({ user }){
             <h2>Posts by {user.username}:</h2>
             {user.posts.map((post, index) => (
             <li key={index}>
-                <h3>{post.message}</h3>
-                <img src={post.imageUrl} alt="" />
+                <Post post={post}/>
             </li>
         ))}
             </ol>
