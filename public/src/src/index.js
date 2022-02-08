@@ -10,14 +10,26 @@ import {
 import reportWebVitals from './reportWebVitals';
 import { Users } from './routes/Users';
 import { Posts } from './routes/Posts';
+import { UserDetailPage } from './routes/UserDetailPage';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="users" element={<Users />} />
+      <Route path="/" element={<App />}>
+      <Route path="users" element={<Users />}>
+        <Route path=':userId' element={<UserDetailPage />}/>
+      </Route>
       <Route path="posts" element={<Posts />} />
+      <Route
+      path="*"
+      element={
+        <main style={{ padding: "1rem" }}>
+          <p>There's nothing here!</p>
+        </main>
+      }
+    />
+      </Route>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>,
