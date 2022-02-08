@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function User({user}){
     return <div>
-        <h1>{user.name}</h1>
+        <Link to={`/users/${user.id}`}><h1>{user.name}</h1></Link>
         <h3>{user.username}</h3>
         <img src={user.profileImageUrl} alt="" />
         <p>{user.posts.length === 1 ? `${user.posts.length} post.` : `${user.posts.length} posts.`}</p>

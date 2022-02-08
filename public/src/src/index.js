@@ -2,36 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
-import reportWebVitals from './reportWebVitals';
-import { Users } from './routes/Users';
-import { Posts } from './routes/Posts';
-import { UserDetailPage } from './routes/UserDetailPage';
 
+import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}>
-      <Route path="users" element={<Users />}>
-        <Route path=':userId' element={<UserDetailPage />}/>
-      </Route>
-      <Route path="posts" element={<Posts />} />
-      <Route
-      path="*"
-      element={
-        <main style={{ padding: "1rem" }}>
-          <p>There's nothing here!</p>
-        </main>
-      }
-    />
-      </Route>
-    </Routes>
-    </BrowserRouter>
+  <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
