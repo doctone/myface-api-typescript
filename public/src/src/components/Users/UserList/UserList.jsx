@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Footer } from "../../Footer/Footer";
 import { User } from "../User/User";
 
 
@@ -29,5 +30,6 @@ export function UserList(){
     }
     return <div className="users">
         {userListContent}
+        <Footer />
     </div>
 }
