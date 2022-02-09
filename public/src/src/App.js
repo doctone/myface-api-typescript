@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { PostList } from './components/Posts/PostList/PostList';
 import { UserList } from './components/Users/UserList/UserList';
 import { UserDetail } from './components/Users/UserDetail/UserDetail';
