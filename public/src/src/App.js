@@ -3,7 +3,7 @@ import { PostList } from './components/Posts/PostList/PostList';
 import { UserList } from './components/Users/UserList/UserList';
 import { UserDetail } from './components/Users/UserDetail/UserDetail';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { NavBar } from './components/Header/NavBar';
+import { NavBar } from './components/Header/NavBar'
 
 function App() {
   return (

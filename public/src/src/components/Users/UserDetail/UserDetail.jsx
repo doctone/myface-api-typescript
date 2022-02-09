@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { UserHeader } from "./UserHeader";
 import { UserPostList } from "./UserPostList";
-import { NavBar } from "../../Header/NavBar";
 
 export function UserDetail(){
     const params = useParams();
@@ -18,7 +17,7 @@ export function UserDetail(){
                 setUser(data);
             });
         },
-        [user]
+        [params.userId]
     );
 
     let userContent;
